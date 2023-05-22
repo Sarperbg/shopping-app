@@ -11,13 +11,13 @@ const Home = () => {
     return (
         <div>
             <SliderComp />
-            <Sorting />
+            <Sorting setSort={setSort} />
             <div className='flex'>
-                <Category />
-                <Products />
+                <Category setCategory={setCategory} />
+                <Products category={category} sort={sort} />
 
             </div>
-          
+
 
 
 
