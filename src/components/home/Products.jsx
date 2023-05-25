@@ -31,7 +31,7 @@ const Products = ({category,sort}) => {
   console.log(sort, "sort")
 
   useEffect(() => {
-    if(category) {
+    if(category){
       dispatch(getCategoryProducts(category))
     } else {
       dispatch(getProducts())
@@ -41,12 +41,12 @@ const Products = ({category,sort}) => {
   return (
     <div>
       {
-        productsStatus == "LOADING" ? <Loading /> :
+        productsStatus === "LOADING" ? <Loading /> :
           <>
             <div className='flex flex-wrap'>
               {
-                currentItems?.sort((a,b) => sort == "inc" ? a.price - b.price : sort == "dec" ? b.price - a.price : "")?.map((product, i) => (
-                  <Product key={i} product= {product} />
+                currentItems?.sort((a,b) => sort === "inc" ? a.price - b.price : sort === "dec" ? b.price - a.price : "")?.map((product, i) => (
+                  <Product key={i} product={product} />
                 ))
               }
             </div>
